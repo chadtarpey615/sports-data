@@ -1,10 +1,11 @@
 import React from 'react'
-
+import "./banner.css";
+import image from "../../images/nfl.jpeg"
 const Banner = () => {
     return (
-        <div>
-            <img src="https://unsplash.com/photos/z43NxQB68EQ" alt="nfl" />
-            <h1 style={{ fontColor: "white" }}>working?</h1>
+        <div className="banner">
+            <img src={image} alt="nfl" />
+
         </div>
     )
 }
