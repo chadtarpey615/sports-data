@@ -1,5 +1,8 @@
 import Navbar from "./components/Navbar/Navbar";
-import Banner from "./components/Banner/Banner.js"
+import Banner from "./components/Banner/Banner.js";
+import Stat from "./components/Stats/Stats.js";
+import requests from "./request.js";
+
 import './App.css';
 
 function App() {
@@ -7,6 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner />
+      <Stat fetchUrl={requests.fetchPlayerDetails} />
     </div>
   );
 }
