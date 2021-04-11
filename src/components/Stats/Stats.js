@@ -1,21 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+
+
 export default function Stats({ fetchUrl }) {
-    // console.log(fetchUrl)
+    const [stats, setStats] = useState([]);
+
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(fetchUrl)
+            const request = await axios.get(fetchUrl, { params: { _limit: 25 }, active: true })
                 .then(response => {
-                    console.log(response.data)
+                    setStats(response.data)
                 })
             // console.log(request);
-            // return request;
+            return request;
         }
         fetchData()
     }, [fetchUrl]);
     return (
         <div>
+            {
+                stats.map((stat) => {
+                    console.log(stat)
+                    return (
+                        <h1>{stat.firstName}</h1>
 
+                    )
+                })
+            }
         </div>
     )
 }
+
