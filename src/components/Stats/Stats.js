@@ -4,14 +4,13 @@ import axios from "axios";
 
 export default function Stats({ fetchUrl }) {
     const [stats, setStats] = useState([]);
-
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(fetchUrl, { params: { _limit: 25 }, active: true })
+            const request = await axios.get(fetchUrl)
                 .then(response => {
                     setStats(response.data)
                 })
-            // console.log(request);
+            console.log(request);
             return request;
         }
         fetchData()
@@ -22,7 +21,7 @@ export default function Stats({ fetchUrl }) {
                 stats.map((stat) => {
                     console.log(stat)
                     return (
-                        <h1>{stat.firstName}</h1>
+                        <h1></h1>
 
                     )
                 })
