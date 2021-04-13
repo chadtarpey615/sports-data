@@ -23,15 +23,20 @@ function Stats({ fetchUrl }) {
         fetchData()
     }, [fetchUrl]);
     return (
-        <div>
+        <div className="container">
             {
                 stats.map((stat) => {
                     console.log(stat.Name)
                     return (
-                        <div className="stats" key={stat.StadiumID}>
-                            <h1>{stat.Name}</h1>
-                            <p>{stat.City}</p>
-                        </div>
+                        <>
+                            <div className="section">
+                                <h1>{stat.Name}</h1>
+
+
+                                <p>{stat.City}</p>
+                            </div>
+                        </>
+
 
                     )
                 })
