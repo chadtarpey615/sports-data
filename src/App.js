@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner />
-      <Stat fetchUrl={requests.fetchStadiums} />
+      <Stat fetchUrl={requests.fetchTeams} />
     </div>
   );
 }

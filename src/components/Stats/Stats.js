@@ -8,6 +8,7 @@ export default function Stats({ fetchUrl }) {
         async function fetchData() {
             const request = await axios.get(fetchUrl)
                 .then(response => {
+                    console.log(response)
                     setStats(response.data)
                 })
             console.log(request);
@@ -19,7 +20,7 @@ export default function Stats({ fetchUrl }) {
         <div>
             {
                 stats.map((stat) => {
-                    console.log(stat)
+                    // console.log(stat)
                     return (
                         <h1></h1>
 
