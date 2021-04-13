@@ -1,0 +1,6 @@
+.stats {
+  display: inline-block;
+  flex-direction: row;
+  padding: 5px;
+  margin-left: 5px;
+}

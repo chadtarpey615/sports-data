@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import "./stats.css";
 
 
-export default function Stats({ fetchUrl }) {
+function Stats({ fetchUrl }) {
     const [stats, setStats] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(fetchUrl)
+            // console.log(fetchUrl)
+            const request = await axios.get(fetchUrl, {
+                params: {
+                    _limit: 10
+                }
+            })
                 .then(response => {
-                    console.log(response)
+                    // console.log(response)
                     setStats(response.data)
                 })
             console.log(request);
@@ -20,9 +26,12 @@ export default function Stats({ fetchUrl }) {
         <div>
             {
                 stats.map((stat) => {
-                    // console.log(stat)
+                    console.log(stat.Name)
                     return (
-                        <h1></h1>
+                        <div className="stats" key={stat.StadiumID}>
+                            <h1>{stat.Name}</h1>
+                            <p>{stat.City}</p>
+                        </div>
 
                     )
                 })
@@ -30,4 +39,6 @@ export default function Stats({ fetchUrl }) {
         </div>
     )
 }
+
+export default Stats;
 
