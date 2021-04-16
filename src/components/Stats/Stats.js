@@ -26,14 +26,17 @@ function Stats({ fetchUrl }) {
         <div className="container">
             {
                 stats.map((stat) => {
-                    console.log(stat.Name)
+                    console.log(stat)
                     return (
                         <>
                             <div className="section">
                                 <h1>{stat.Name}</h1>
+                                <br />
+                                <h4>{stat.City}, {stat.State}</h4>
+                                <p>Playing Surface: {stat.PlayingSurface}</p>
+                                <p>Stadium type: {stat.Type}</p>
+                                <p>Stadium capacity: {stat.Capacity}</p>
 
-
-                                <p>{stat.City}</p>
                             </div>
                         </>
 
