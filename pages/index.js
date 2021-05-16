@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Header from "../components/Header"
 
 
 export default function Home() {
@@ -10,7 +11,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Let's create facebook</h1>
+
+      <Header />
+
+      <main>
+        {/* Sidebar */}
+        {/* feed */}
+        {/* widgets */}
+      </main>
     </div>
   )
 }
